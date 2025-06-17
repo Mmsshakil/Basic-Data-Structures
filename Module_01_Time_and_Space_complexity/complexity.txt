@@ -1,0 +1,7 @@
+best to wrost complexity
+1. Constant - O(1)
+2. Logarithmric - O(log(N))
+3. Square root - O(sqrt(N))
+4. Linear - O(N)
+5. Linearithiric - O(Nlog(N))
+6. Quadratic - O(N*N)
