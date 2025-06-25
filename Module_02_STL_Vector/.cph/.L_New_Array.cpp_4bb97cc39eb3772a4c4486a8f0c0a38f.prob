@@ -1,0 +1,1 @@
+{"name":"Local: L_New_Array","url":"e:\\Phitron\\Basic Data Structures\\Module_02_STL_Vector\\L_New_Array.cpp","tests":[{"id":1750502123691,"input":"2\n1 2\n3 4","output":"3 4 1 2 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Phitron\\Basic Data Structures\\Module_02_STL_Vector\\L_New_Array.cpp","group":"local","local":true}
