@@ -1,13 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node
 {
 public:
-    int val;
+    long long int val;
     Node *next;
 
-    Node(int val)
+    Node(long long int val)
     {
         this->val = val;
         this->next = NULL;
@@ -30,15 +29,32 @@ void insert_at_tail_optimize(Node *&head, Node *&tail, int val)
     }
 }
 
-void print_linked_list(Node *head)
+void difference_between_min_max(Node *head)
 {
+
     Node *temp = head;
+
+    long long int min = temp->val;
+    long long int max = temp->val;
 
     while (temp != NULL)
     {
-        cout << temp->val << endl;
+        if (temp->val > max)
+        {
+            max = temp->val;
+        }
+        else if (temp->val < min)
+        {
+            min = temp->val;
+        }
+
         temp = temp->next;
     }
+
+    // cout << abs(max) - abs(min) << endl;
+    cout << abs(max - min) << endl;
+
+    // cout << max << " " << min << endl;
 }
 
 int main()
@@ -48,9 +64,8 @@ int main()
 
     while (true)
     {
-        int val;
+        long long int val;
         cin >> val;
-
         if (val == -1)
         {
             break;
@@ -61,7 +76,7 @@ int main()
         }
     }
 
-    print_linked_list(head);
+    difference_between_min_max(head);
 
     return 0;
 }

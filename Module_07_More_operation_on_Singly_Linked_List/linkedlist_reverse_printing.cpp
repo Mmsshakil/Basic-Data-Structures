@@ -30,15 +30,15 @@ void insert_at_tail_optimize(Node *&head, Node *&tail, int val)
     }
 }
 
-void print_linked_list(Node *head)
+// we will use recursion to print the linked list in reverse
+void print_reverse(Node *tmp)
 {
-    Node *temp = head;
-
-    while (temp != NULL)
+    if (tmp == NULL)
     {
-        cout << temp->val << endl;
-        temp = temp->next;
+        return;
     }
+    print_reverse(tmp->next);
+    cout << tmp->val << endl;
 }
 
 int main()
@@ -61,7 +61,7 @@ int main()
         }
     }
 
-    print_linked_list(head);
+    print_reverse(head);
 
     return 0;
 }

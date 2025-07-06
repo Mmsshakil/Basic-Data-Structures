@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node
 {
 public:
@@ -36,8 +35,31 @@ void print_linked_list(Node *head)
 
     while (temp != NULL)
     {
-        cout << temp->val << endl;
+        cout << temp->val << " ";
         temp = temp->next;
+    }
+    cout << endl;
+}
+
+
+// need more research on this function
+void remove_duplicates(Node *head)
+{
+    for (Node *i = head; i != NULL; i = i->next)
+    {
+        for (Node *j = i->next, *prev = i; j != NULL;)
+        {
+            if (i->val == j->val)
+            {
+                prev->next = j->next;
+                j = prev->next;
+            }
+            else
+            {
+                prev = j;
+                j = j->next;
+            }
+        }
     }
 }
 
@@ -48,9 +70,8 @@ int main()
 
     while (true)
     {
-        int val;
+        long long int val;
         cin >> val;
-
         if (val == -1)
         {
             break;
@@ -60,6 +81,8 @@ int main()
             insert_at_tail_optimize(head, tail, val);
         }
     }
+
+    remove_duplicates(head);
 
     print_linked_list(head);
 

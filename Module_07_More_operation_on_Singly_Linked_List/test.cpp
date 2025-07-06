@@ -14,7 +14,7 @@ public:
     }
 };
 
-void insert_at_tail_optimize(Node *&head, Node *&tail, int val)
+void insert_at_tail(Node *&head, int val, Node *&tail)
 {
     Node *newNode = new Node(val);
 
@@ -43,6 +43,7 @@ void print_linked_list(Node *head)
 
 int main()
 {
+
     Node *head = NULL;
     Node *tail = NULL;
 
@@ -50,14 +51,13 @@ int main()
     {
         int val;
         cin >> val;
-
         if (val == -1)
         {
             break;
         }
         else
         {
-            insert_at_tail_optimize(head, tail, val);
+            insert_at_tail(head, val, tail);
         }
     }
 

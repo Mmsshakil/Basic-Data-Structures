@@ -30,6 +30,14 @@ void insert_at_tail_optimize(Node *&head, Node *&tail, int val)
     }
 }
 
+// here we use & to get the update linked list in main function also
+void delete_head(Node *&head)
+{
+    Node *deleteNode = head; // create a node that will contain the main head
+    head = head->next;       // update the head
+    delete deleteNode;       // now we delete the main head
+}
+
 void print_linked_list(Node *head)
 {
     Node *temp = head;
@@ -61,6 +69,7 @@ int main()
         }
     }
 
+    delete_head(head);
     print_linked_list(head);
 
     return 0;

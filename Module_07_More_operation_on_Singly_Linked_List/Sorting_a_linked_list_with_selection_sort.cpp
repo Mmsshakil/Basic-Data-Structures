@@ -30,6 +30,20 @@ void insert_at_tail_optimize(Node *&head, Node *&tail, int val)
     }
 }
 
+void sort_linked_list(Node *head)
+{
+    for (Node *i = head; i->next != NULL; i = i->next)
+    {
+        for (Node *j = i->next; j != NULL; j = j->next)
+        {
+            if (i->val > j->val)
+            {
+                swap(i->val, j->val);
+            }
+        }
+    }
+}
+
 void print_linked_list(Node *head)
 {
     Node *temp = head;
@@ -61,6 +75,7 @@ int main()
         }
     }
 
+    sort_linked_list(head);
     print_linked_list(head);
 
     return 0;

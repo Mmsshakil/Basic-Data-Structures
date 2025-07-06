@@ -30,6 +30,22 @@ void insert_at_tail_optimize(Node *&head, Node *&tail, int val)
     }
 }
 
+void delete_at_tail(Node *&head, Node *&tail, int idx)
+{
+    Node *temp = head;
+
+    for (int i = 1; i < idx; i++)
+    {
+        temp = temp->next;
+    }
+
+    Node *deleteNode = temp->next;
+
+    temp->next = temp->next->next;
+    delete deleteNode;
+    temp = tail;
+}
+
 void print_linked_list(Node *head)
 {
     Node *temp = head;
@@ -61,6 +77,7 @@ int main()
         }
     }
 
+    delete_at_tail(head, tail, 11); // for delete tail always give the last index number
     print_linked_list(head);
 
     return 0;
