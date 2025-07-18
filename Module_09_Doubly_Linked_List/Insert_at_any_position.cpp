@@ -71,7 +71,7 @@ int main()
     int idx;
     cin >> idx;
 
-    insert_at_any_position(head, tail, 100, 1);
+    insert_at_any_position(head, tail, 100, 3);
     print_forward(head);
 
     return 0;

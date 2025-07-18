@@ -33,7 +33,7 @@ int main()
 
     int count = 0;
 
-    while (fast != NULL)
+    while (fast != NULL && fast->next != NULL)
     {
 
         slow = slow->next;
